@@ -95,13 +95,28 @@ const ScrollableSections = () => {
               <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-6 sm:mb-8 opacity-90">
                 {section.content}
               </p>
+              
+              {/* Mobile-only image that alternates position */}
+              <div className="lg:hidden my-6">
+                <div className={`relative w-full h-64 rounded-xl overflow-hidden ${
+                  index % 2 === 0 ? 'order-1' : 'order-2'
+                }`}>
+                  <img
+                    src={section.image}
+                    alt={section.title}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-opacity-20"></div>
+                </div>
+              </div>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Right Side - Dynamic Images */}
-      <div className="w-full lg:w-1/2 h-[300px] sm:h-[400px] lg:h-full relative flex items-center justify-center order-1 lg:order-2">
+      {/* Right Side - Dynamic Images (Desktop only) */}
+      <div className="hidden lg:block w-full lg:w-1/2 h-[300px] sm:h-[400px] lg:h-full relative flex items-center justify-center order-1 lg:order-2">
         <div className="relative w-full h-full overflow-hidden">
           {sectionsData.map((section, index) => (
             <div
@@ -122,26 +137,10 @@ const ScrollableSections = () => {
             </div>
           ))}
         </div>
-        
-        {/* Mobile Indicator */}
-        <div className="lg:hidden absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
-          {sectionsData.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => {
-                setActiveSection(index);
-                sectionRefs.current[index]?.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className={`w-3 h-3 rounded-full transition-all ${
-                activeSection === index 
-                  ? 'bg-white w-6' 
-                  : 'bg-white bg-opacity-40'
-              }`}
-              aria-label={`Go to section ${index + 1}`}
-            />
-          ))}
-        </div>
       </div>
+      
+      {/* Mobile Indicator */}
+     
     </div>
   );
 };

@@ -7,11 +7,11 @@ export default function LegoraHeroSections() {
       <section className="min-h-screen bg-gray-50 px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
-          <div className="mb-6 sm:mb-8">
+          {/* <div className="mb-6 sm:mb-8">
             <button className="bg-white px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-sm text-sm sm:text-base text-gray-700 font-medium hover:shadow-md transition-shadow duration-200">
               Join Us
             </button>
-          </div>
+          </div> */}
 
           {/* Main Content */}
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
@@ -102,11 +102,11 @@ export default function LegoraHeroSections() {
       <section className="min-h-screen bg-gray-50 px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
-          <div className="mb-6 sm:mb-8 flex justify-center lg:justify-start">
+          {/* <div className="mb-6 sm:mb-8 flex justify-center lg:justify-start">
             <button className="bg-white px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-sm text-sm sm:text-base text-gray-700 font-medium hover:shadow-md transition-shadow duration-200 lg:ml-40">
               About Us
             </button>
-          </div>
+          </div> */}
 
           {/* Main Content - reversed order */}
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">

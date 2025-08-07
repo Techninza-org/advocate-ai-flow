@@ -3,7 +3,7 @@ import React from 'react';
 const Hero = () => {
     return (
         <div 
-            className="relative h-screen bg-cover bg-center bg-no-repeat" 
+            className="relative h-96 md:h-96 lg:h-screen xl:h-screen bg-cover bg-center bg-no-repeat" 
             style={{ backgroundImage: "url('/aihero.png')" }}
         >
             {/* Overlay with better contrast control */}
@@ -24,7 +24,6 @@ const Hero = () => {
                 {/* Button with improved hover state and accessibility */}
                 <button 
                     className="mt-6 sm:mt-8 bg-white text-black px-5 py-2 sm:px-6 sm:py-3 rounded-md hover:bg-gray-100 transition-colors duration-300 flex items-center focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
-                    aria-label="Explore Platform"
                 >
                     Explore Platform
                     <span className="ml-2">

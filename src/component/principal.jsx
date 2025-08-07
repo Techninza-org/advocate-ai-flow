@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const PrincipleCard = ({ card, index, isActive, onClick, cardPositions }) => {
+const PrincipleCard = ({ card, index, isActive, onClick, cardPositions, isMobile }) => {
   const { id, title, description, image, bgColor, textColor } = card;
   const { left, width, zIndex } = cardPositions;
 
@@ -13,44 +13,82 @@ const PrincipleCard = ({ card, index, isActive, onClick, cardPositions }) => {
     >
       <div className={`relative w-full h-full rounded-3xl overflow-hidden shadow-2xl ${bgColor} flex`}>
         {/* Rotated Title Tab (Always Visible) */}
-        <div className="absolute top-0 bottom-0 left-0 w-16 md:w-20 lg:w-24 flex items-center justify-center cursor-pointer">
-          <span className={`transform -rotate-90 whitespace-nowrap text-lg md:text-xl lg:text-2xl font-light tracking-wider ${textColor}`}>
+        <div className="absolute top-0 bottom-0 left-0 w-12 sm:w-16 md:w-20 lg:w-24 flex items-center justify-center cursor-pointer">
+          <span className={`transform -rotate-90 whitespace-nowrap text-sm sm:text-lg md:text-xl lg:text-2xl font-light tracking-wider ${textColor}`}>
             {id} <span className="font-medium">{title}</span>
           </span>
         </div>
 
         {/* Main Card Content */}
-        <div className="absolute left-16 md:left-20 lg:left-24 right-0 top-0 bottom-0 p-4 sm:p-6 md:p-8">
+        <div className="absolute left-12 sm:left-16 md:left-20 lg:left-24 right-0 top-0 bottom-0 p-2 sm:p-4 md:p-6 lg:p-8">
           <div className="flex items-center h-full overflow-hidden">
-            {/* Image container */}
-            <div 
-              className={`w-1/2 md:w-[45%] h-[60%] sm:h-[70%] md:h-[80%] rounded-2xl overflow-hidden shadow-lg flex-shrink-0 transition-all duration-500 ease-fluid ${
-                isActive ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4 sm:-translate-x-8'
-              }`}
-              style={{ transitionDelay: isActive ? '200ms' : '0ms' }}
-            >
-              <img 
-                src={image} 
-                alt={title} 
-                className="w-full h-full object-cover" 
-                loading="lazy"
-              />
-            </div>
-            
-            {/* Text content */}
-            <div 
-              className={`ml-4 sm:ml-8 md:ml-12 max-w-xs sm:max-w-sm md:max-w-md transition-all duration-500 ease-fluid ${
-                isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 sm:translate-y-8'
-              }`}
-              style={{ transitionDelay: isActive ? '300ms' : '0ms' }}
-            >
-              <h2 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mb-2 sm:mb-4 tracking-tight ${textColor}`}>
-                {title}
-              </h2>
-              <p className={`text-sm sm:text-base md:text-lg leading-relaxed ${textColor} opacity-80`}>
-                {description}
-              </p>
-            </div>
+            {/* Mobile Layout - Stack vertically */}
+            {isMobile && isActive ? (
+              <div className="w-full h-full flex flex-col justify-center space-y-4">
+                {/* Image container for mobile */}
+                <div 
+                  className={`w-full h-[40%] rounded-2xl overflow-hidden shadow-lg transition-all duration-500 ease-fluid ${
+                    isActive ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
+                  }`}
+                  style={{ transitionDelay: isActive ? '200ms' : '0ms' }}
+                >
+                  <img 
+                    src={image} 
+                    alt={title} 
+                    className="w-full h-full object-cover" 
+                    loading="lazy"
+                  />
+                </div>
+                
+                {/* Text content for mobile */}
+                <div 
+                  className={`w-full transition-all duration-500 ease-fluid ${
+                    isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                  }`}
+                  style={{ transitionDelay: isActive ? '300ms' : '0ms' }}
+                >
+                  <h2 className={`text-xl sm:text-2xl font-light mb-2 tracking-tight ${textColor}`}>
+                    {title}
+                  </h2>
+                  <p className={`text-xs sm:text-sm leading-relaxed ${textColor} opacity-80`}>
+                    {description}
+                  </p>
+                </div>
+              </div>
+            ) : (
+              /* Desktop Layout - Side by side */
+              <>
+                {/* Image container for desktop */}
+                <div 
+                  className={`w-1/2 md:w-[45%] h-[60%] sm:h-[70%] md:h-[80%] rounded-2xl overflow-hidden shadow-lg flex-shrink-0 transition-all duration-500 ease-fluid ${
+                    isActive ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4 sm:-translate-x-8'
+                  }`}
+                  style={{ transitionDelay: isActive ? '200ms' : '0ms' }}
+                >
+                  <img 
+                    src={image} 
+                    alt={title} 
+                    className="w-full h-full object-cover" 
+                    loading="lazy"
+                  />
+                </div>
+                
+                {/* Text content for desktop */}
+                <div 
+                  className={`ml-4 sm:ml-8 md:ml-12 max-w-xs sm:max-w-sm md:max-w-md transition-all duration-500 ease-fluid ${
+                    isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 sm:translate-y-8'
+                  }`}
+                  style={{ transitionDelay: isActive ? '300ms' : '0ms' }}
+                >
+                  <h2 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mb-2 sm:mb-4 tracking-tight ${textColor}`}>
+                    {title}
+                  </h2>
+                  <p className={`text-sm sm:text-base md:text-lg leading-relaxed ${textColor} opacity-80`}>
+                    {description}
+                  </p>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>
@@ -101,8 +139,22 @@ const CorePrinciples = () => {
     setCurrentCard(index);
   };
 
-  // Animation constants
-  const FOLDED_WIDTH = 80; // Reduced for mobile
+  // Check if mobile
+  const [isMobile, setIsMobile] = React.useState(false);
+  
+  React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Animation constants - responsive
+  const FOLDED_WIDTH = isMobile ? 50 : 80;
   const CARD_COUNT = cards.length;
   const TOTAL_FOLDED_SPACE = (CARD_COUNT - 1) * FOLDED_WIDTH;
 
@@ -117,14 +169,33 @@ const CorePrinciples = () => {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-8 sm:mb-12 md:mb-16">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-gray-800 mb-2 sm:mb-4 tracking-tight">
+          <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-light text-gray-800 mb-2 sm:mb-4 tracking-tight">
             Our Core Principles
           </h1>
           <div className="w-16 sm:w-20 md:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-gray-400 to-gray-300 rounded-full"></div>
         </div>
 
+        {/* Mobile Card Selector - Show on small screens */}
+        {/* <div className="md:hidden mb-6">
+          <div className="flex justify-center space-x-4">
+            {cards.map((card, index) => (
+              <button
+                key={card.id}
+                onClick={() => handleCardClick(index)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                  index === currentCard
+                    ? 'bg-gray-800 text-white'
+                    : 'bg-white text-gray-600 border border-gray-200'
+                }`}
+              >
+                {card.id} {card.title}
+              </button>
+            ))}
+          </div>
+        </div> */}
+
         {/* Animation Container */}
-        <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] mb-12 sm:mb-16 md:mb-20">
+        <div className="relative w-full h-[400px] sm:h-[450px] md:h-[500px] mb-12 sm:mb-16 md:mb-20">
           {cards.map((card, index) => {
             const isActive = index === currentCard;
             const activeCardWidth = `calc(100% - ${TOTAL_FOLDED_SPACE}px)`;
@@ -153,6 +224,7 @@ const CorePrinciples = () => {
                 isActive={isActive}
                 onClick={handleCardClick}
                 cardPositions={cardPositions}
+                isMobile={isMobile}
               />
             );
           })}
@@ -171,7 +243,7 @@ const CorePrinciples = () => {
             <div className="w-full bg-white mt-6 sm:mt-8 md:mt-10">
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6 items-center justify-items-center px-4 sm:px-10">
                 {logos.map((logo, index) => (
-                  <div key={index} className="h-12 sm:h-14 md:h-16 w-full flex items-center justify-center p-2">
+                  <div key={index} className="h-8 sm:h-12 md:h-14 lg:h-16 w-full flex items-center justify-center p-2">
                     <img
                       src={logo}
                       alt={`Logo ${index}`}
@@ -192,7 +264,7 @@ const CorePrinciples = () => {
               {/* Left Side with Blue Shape and Images */}
               <div className="relative w-full md:w-1/2 h-[300px] sm:h-[400px] md:h-[500px]">
                 {/* Blue Background Shape */}
-                <div className="absolute bottom-4 sm:bottom-8 -left-12 sm:-left-16 md:-left-20 w-full rounded-3xl z-0">
+                <div className="absolute bottom-4 sm:bottom-8 -left-6 sm:-left-12 md:-left-16 lg:-left-20 w-full rounded-3xl z-0">
                   <img
                     src="/Rectangle 24 (1).png"
                     alt="Background Shape"
@@ -212,7 +284,7 @@ const CorePrinciples = () => {
                 </div>
 
                 {/* Small Overlapping Image */}
-                <div className="absolute z-20 bottom-[60px] sm:bottom-[90px] -left-6 sm:-left-8 w-[120px] sm:w-[150px] md:w-[180px] h-[100px] sm:h-[120px] md:h-[150px] rounded-xl overflow-hidden border shadow-lg">
+                <div className="absolute z-20 bottom-[40px] sm:bottom-[60px] md:bottom-[90px] -left-3 sm:-left-6 md:-left-8 w-[80px] sm:w-[120px] md:w-[150px] lg:w-[180px] h-[60px] sm:h-[100px] md:h-[120px] lg:h-[150px] rounded-xl overflow-hidden border shadow-lg">
                   <img
                     src="/0cc220677236fbb2f0cbd1da198f100bb19b2154.png" 
                     alt="Analytics"
@@ -229,13 +301,13 @@ const CorePrinciples = () => {
                     Since 2005
                   </button>
                 </div>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl text-black">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-black">
                   We're a creative branding
                 </h2>
-                <h3 className="text-[#BCBCBC] text-2xl sm:text-3xl md:text-4xl mt-1 mb-3 sm:mb-4">
+                <h3 className="text-[#BCBCBC] text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-1 mb-3 sm:mb-4">
                   company of creative thinkers
                 </h3>
-                <p className="border-l-4 border-blue-500 pl-3 sm:pl-4 text-gray-500 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed">
+                <p className="border-l-4 border-blue-500 pl-3 sm:pl-4 text-gray-500 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl leading-relaxed">
                   "Riya opens her tablet. Deepcrucs has already drafted the contract
                   and flagged risks. She reviews and sends—all before court."
                 </p>
