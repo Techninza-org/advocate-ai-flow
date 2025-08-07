@@ -28,27 +28,37 @@ const testimonials = [
 
 export default function TestimonialSection() {
   return (
-    <div className="bg-[#f8f8f8] py-12 px-6 sm:px-12 lg:px-20 flex justify-center">
-      <div className="w-full max-w-7xl px-12">
-        <h2 className="text-3xl md:text-6xl font-light text-gray-900">
-          Don't take our word for it!
-        </h2>
-        <p className="text-3xl md:text-6xl font-light text-gray-400 mb-10">Hear it from our partners.</p>
+    <div className="bg-[#f8f8f8] py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 flex justify-center">
+      <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Heading Section */}
+        <div className="mb-8 sm:mb-10 lg:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light text-gray-900">
+            Don't take our word for it!
+          </h2>
+          <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light text-gray-400">
+            Hear it from our partners.
+          </p>
+        </div>
 
-        <div className="flex flex-col lg:flex-row gap-8">
+        {/* Testimonial Content */}
+        <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-10">
           {/* Left Video */}
-          <div className="relative w-full lg:w-[300px] h-[300px] lg:h-auto rounded-2xl overflow-hidden flex-shrink-0">
+          <div className="w-full lg:w-[300px] xl:w-[350px] h-[250px] sm:h-[300px] lg:h-[400px] rounded-xl sm:rounded-2xl overflow-hidden flex-shrink-0 relative">
             <img
               src={testimonials[0].img}
               alt="Main Testimonial"
               className="w-full h-full object-cover"
+              loading="lazy"
             />
             {testimonials[0].video && (
-              <div className="absolute inset-0 flex items-center justify-center">
-                <button className="bg-white/80 hover:bg-white/90 p-3 rounded-full shadow-lg transition-all">
+              <div className="absolute inset-0 flex items-center justify-center bg-black/10 hover:bg-black/20 transition-all">
+                <button 
+                  className="bg-white/80 hover:bg-white/90 p-3 sm:p-4 rounded-full shadow-lg transition-all"
+                  aria-label="Play testimonial video"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 text-gray-800"
+                    className="h-5 w-5 sm:h-6 sm:w-6 text-gray-800"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -67,22 +77,28 @@ export default function TestimonialSection() {
 
           {/* Testimonial Text */}
           <div className="flex-1">
-            <p className="text-gray-600 w-[650px] text-lg leading-relaxed mb-4">
-              {testimonials[0].text}
-            </p>
-            <p className="font-semibold text-gray-900">{testimonials[0].name}</p>
-            <p className="text-sm text-gray-500">{testimonials[0].position}</p>
+            <div className="mb-4 sm:mb-6">
+              <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-full lg:max-w-2xl">
+                {testimonials[0].text}
+              </p>
+            </div>
+            <div className="mb-6 sm:mb-8 lg:mb-10">
+              <p className="font-semibold text-gray-900 text-lg sm:text-xl">{testimonials[0].name}</p>
+              <p className="text-gray-500 text-sm sm:text-base">{testimonials[0].position}</p>
+            </div>
             
-            <div className="mt-10 flex flex-wrap gap-4 justify-start">
+            {/* Thumbnail Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
               {testimonials.slice(1).map((item, idx) => (
                 <div
                   key={idx}
-                  className="w-[150px] h-[200px] sm:w-[180px] sm:h-[240px] md:w-[200px] md:h-[300px] rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+                  className="aspect-[3/4] rounded-lg sm:rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all cursor-pointer"
                 >
                   <img
                     src={item.img}
                     alt={`Testimonial ${idx + 2}`}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
                   />
                 </div>
               ))}
