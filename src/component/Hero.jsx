@@ -12,13 +12,13 @@ const Hero = () => {
             {/* Content container with improved responsive padding and sizing */}
             <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4 sm:px-6 lg:px-8">
                 {/* Responsive typography with smooth scaling */}
-                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extrabold mb-4 md:mb-6">
+                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl mb-4 md:mb-6">
                     Deepcrucs.ai
                 </h1>
                 
                 {/* Responsive paragraph with optimal line lengths */}
                 <p className="text-base sm:text-lg md:text-xl lg:text-2xl max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl mx-auto leading-relaxed">
-                    AI that thinks like you. Intelligent Automation, Adaptive Legal Workflow Engine - Automate, Analyse & Accelerate the Legal Journey
+                    Human-Centric Legal AI. Adaptive Workflows to Automate, Analyse & Accelerate Justice
                 </p>
                 
                 {/* Button with improved hover state and accessibility */}

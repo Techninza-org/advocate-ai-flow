@@ -99,21 +99,21 @@ const PrincipleCard = ({ card, index, isActive, onClick, cardPositions, isMobile
 const CorePrinciples = () => {
   const [currentCard, setCurrentCard] = useState(0);
 
-  const logos = [
-    "/Amazon_Web_Services_Logo.svg 1.svg", 
-    "/Google_Gemini_logo.svg 1.svg",
-    "/MongoDB_Logo.svg 1.svg", 
-    "/pngimg.com - chatgpt_PNG13 1.svg", 
-    "/67360e822fa15f7f86921343_IDX Logo Blue 1.svg",
-    "/Azure 1.svg"
-  ];
+  // const logos = [
+  //   "/Amazon_Web_Services_Logo.svg 1.svg", 
+  //   "/Google_Gemini_logo.svg 1.svg",
+  //   "/MongoDB_Logo.svg 1.svg", 
+  //   "/pngimg.com - chatgpt_PNG13 1.svg", 
+  //   "/67360e822fa15f7f86921343_IDX Logo Blue 1.svg",
+  //   "/Azure 1.svg"
+  // ];
 
   const cards = [
     {
       id: '01',
       title: 'Innovate',
       description: 'Intelligently automate legal analysis, drafting, and review with our Agentic AI.',
-      image: '/1d611ab1a79611fef4540a140b24949daed48db4.jpg',
+      image: '/Screenshot 2025-08-11 at 3.51.14 PM.png',
       bgColor: 'bg-black',
       textColor: 'text-white'
     },
@@ -159,7 +159,7 @@ const CorePrinciples = () => {
   const TOTAL_FOLDED_SPACE = (CARD_COUNT - 1) * FOLDED_WIDTH;
 
   return (
-    <div className="font-sans bg-gray-50 py-12 sm:py-16 md:py-20 overflow-hidden">
+    <div className="font-sans bg-gray-100 py-12 sm:py-16 md:py-20 overflow-hidden">
       {/* Global styles for custom animation easing */}
       <style jsx global>{`
         .ease-fluid {
@@ -167,12 +167,12 @@ const CorePrinciples = () => {
         }
       `}</style>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
         <div className="mb-8 sm:mb-12 md:mb-16">
-          <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-light text-gray-800 mb-2 sm:mb-4 tracking-tight">
+          <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl mb-2 sm:mb-4 tracking-tight font-semibold text-black">
             Our Core Principles
           </h1>
-          <div className="w-16 sm:w-20 md:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-gray-400 to-gray-300 rounded-full"></div>
+          {/* <div className="w-16 sm:w-20 md:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-gray-400 to-gray-300 rounded-full"></div> */}
         </div>
 
         {/* Mobile Card Selector - Show on small screens */}
@@ -231,90 +231,8 @@ const CorePrinciples = () => {
         </div>
 
         {/* Trusted By Section */}
-        <section className="bg-white py-8 sm:py-12 md:py-16 rounded-2xl shadow-sm">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900">
-              Trusted by thousands of exceptional lawyers.
-            </h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-400 mt-2 sm:mt-3">
-              At the world's top firms
-            </p>
-            
-            <div className="w-full bg-white mt-6 sm:mt-8 md:mt-10">
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6 items-center justify-items-center px-4 sm:px-10">
-                {logos.map((logo, index) => (
-                  <div key={index} className="h-8 sm:h-12 md:h-14 lg:h-16 w-full flex items-center justify-center p-2">
-                    <img
-                      src={logo}
-                      alt={`Logo ${index}`}
-                      className="h-full w-full object-contain opacity-80 hover:opacity-100 transition-opacity"
-                      loading="lazy"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Creative Company Section */}
-        <div className="bg-[#f6f6f6] py-8 sm:py-12 md:py-16 px-4 sm:px-6 mt-8 sm:mt-12 md:mt-16 rounded-3xl">
-          <div className="bg-white max-w-7xl mx-auto rounded-3xl shadow-md py-6 sm:py-8 md:py-10 px-4 sm:px-6">
-            <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-8 md:gap-10 relative max-w-5xl mx-auto">
-              {/* Left Side with Blue Shape and Images */}
-              <div className="relative w-full md:w-1/2 h-[300px] sm:h-[400px] md:h-[500px]">
-                {/* Blue Background Shape */}
-                <div className="absolute bottom-4 sm:bottom-8 -left-6 sm:-left-12 md:-left-16 lg:-left-20 w-full rounded-3xl z-0">
-                  <img
-                    src="/Rectangle 24 (1).png"
-                    alt="Background Shape"
-                    className="w-full h-full object-cover rounded-3xl"
-                    loading="lazy"
-                  />
-                </div>
-
-                {/* Foreground Big Image */}
-                <div className="relative z-10 rounded-2xl overflow-hidden border shadow-xl h-[200px] sm:h-[300px] md:h-[400px]">
-                  <img
-                    src="/0cc220677236fbb2f0cbd1da198f100bb19b2154.png" 
-                    alt="Dashboard"
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-
-                {/* Small Overlapping Image */}
-                <div className="absolute z-20 bottom-[40px] sm:bottom-[60px] md:bottom-[90px] -left-3 sm:-left-6 md:-left-8 w-[80px] sm:w-[120px] md:w-[150px] lg:w-[180px] h-[60px] sm:h-[100px] md:h-[120px] lg:h-[150px] rounded-xl overflow-hidden border shadow-lg">
-                  <img
-                    src="/0cc220677236fbb2f0cbd1da198f100bb19b2154.png" 
-                    alt="Analytics"
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-
-              {/* Right Side Text */}
-              <div className="w-full md:w-1/2 mt-6 md:mt-0">
-                <div className="mb-3 sm:mb-4">
-                  <button className="bg-white px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-sm text-sm sm:text-base text-gray-700 font-medium hover:shadow-md transition-shadow">
-                    Since 2005
-                  </button>
-                </div>
-                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-black">
-                  We're a creative branding
-                </h2>
-                <h3 className="text-[#BCBCBC] text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-1 mb-3 sm:mb-4">
-                  company of creative thinkers
-                </h3>
-                <p className="border-l-4 border-blue-500 pl-3 sm:pl-4 text-gray-500 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl leading-relaxed">
-                  "Riya opens her tablet. Deepcrucs has already drafted the contract
-                  and flagged risks. She reviews and sends—all before court."
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+     
       </div>
     </div>
   );

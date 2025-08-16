@@ -69,11 +69,11 @@ const VideoPlayer = ({ videoUrl }) => {
   };
 
   return (
-    <div className="relative w-full my-8 sm:my-12 lg:my-16">
+    <div className="relative w-full">
       {/* Video element */}
       <video
         ref={videoRef}
-        className="w-full h-auto max-h-screen object-cover aspect-video"
+        className="w-full h-[500px] object-cover aspect-video"
         onClick={togglePlayPause}
         loop
         muted={isMuted}
