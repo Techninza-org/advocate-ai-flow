@@ -30,7 +30,7 @@ const ScrollableSections = () => {
             <span className="inline-block bg-white text-black font-semibold text-sm px-3 py-1 rounded-full mb-4">
               Insight AI
             </span>
-            <h2 className="text-2xl font-bold mb-2">
+            <h2 className="text-2xl md:xl lg:2xl font-bold mb-2">
               Cross-Case Timeline <br /> Compare Events Across Cases
             </h2>
             <p className="text-gray-300">

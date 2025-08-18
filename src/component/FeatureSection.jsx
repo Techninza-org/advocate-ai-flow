@@ -6,13 +6,13 @@ const FeatureSection = () => {
       <section className="bg-gray-100 py-8 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-16 relative overflow-hidden" id='aiCrmSection'>
   {/* Heading */}
   <div className="text-center max-w-5xl mx-auto">
-    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium text-gray-900">
+    <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium text-gray-900">
       The Legal Dashboard
     </h2>
-    <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-[#AFA18F] mt-1 sm:mt-2 font-medium">
+    <p className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-[#AFA18F] mt-1 sm:mt-2 font-medium">
       That Works Like You Do
     </p>
-    <p className="text-sm sm:text-base md:text-4xl text-[#878787] mt-3 sm:mt-4 px-4 sm:px-6 py-2 sm:py-3 rounded-md inline-block">
+    <p className="text-lg sm:text-base md:text-4xl text-[#878787] mt-3 sm:mt-4 px-4 sm:px-6 py-2 sm:py-3 rounded-md inline-block">
       Deepcrucs brings your cases, documents, and to-dos into one smart,
       streamlined command center.
     </p>
@@ -52,10 +52,10 @@ const FeatureSection = () => {
     <div className="bg-gray-100" >
       {/* Section 1 */}
       <div className="py-12 md:py-16 px-4 sm:px-6 lg:px-2 max-w-7xl mx-auto">
-        <p className="text-5xl font-semibold text-black mb-4">
+        <p className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-black mb-4">
           Complete LegalOps Platform
         </p>
-        <p className='text-[#AFA18F] text-3xl mb-10'>
+        <p className='text-[#AFA18F] text-2xl sm:text-3xl md:text-4xl lg:text-3xl mb-10'>
           Manage tasks, clients, billing, and legal workflows—all from one intelligent interface.
         </p>
 
@@ -207,7 +207,7 @@ const FeatureSection = () => {
               title: "Cross-Case Timeline ",
               subtitle: "Compare Events Across Cases",
               text: "Merge timelines from multiple cases to reveal patterns, links, and strategic insights.",
-              video: "/vedio1.mp4",
+              video: "/Insight AI.mp4",
               reverse: false,
               tag:"Insight AI",
               bgImage: "/timeline-bg.jpg"
@@ -216,7 +216,7 @@ const FeatureSection = () => {
               title: "AI Document Summary ",
               subtitle: "Turn Pages into Key Points",
               text: "Condense lengthy legal documents into concise, accurate summaries without losing important context or details.",
-              video: "/vedio11.mp4",
+              video: "/Summarize AI.MOV",
               reverse: true,
               tag:"Summarize AI",
               bgImage: "/summary-bg.jpg"
@@ -225,7 +225,7 @@ const FeatureSection = () => {
               title: "Document Chat Search",
               subtitle: "Ask Your File Anything",
               text: "Query your documents in plain language and get instant, pinpoint answers directly from the file's content.",
-              video: "/vedio2.mp4",
+              video: "/Ask AI.MOV",
               reverse: false,
               tag:"Ask AI",
               bgImage: "/search-bg.jpg"
@@ -234,7 +234,7 @@ const FeatureSection = () => {
               title: "Smart Annotations",
               subtitle: "Navigate by Section",
               text: "Automatically generate an indexed view of your document with clickable sections linked to exact locations.",
-              video: "/vedios3.mp4",
+              video: "/Annotate AI.MOV",
               reverse: true,
               tag:"Annotate AI",
               bgImage: "/annotate-bg.jpg"
@@ -251,10 +251,10 @@ const FeatureSection = () => {
                 <span className="inline-block bg-white text-black font-semibold text-sm px-3 py-1 rounded-full mb-4">
                   {sec.tag}
                 </span>
-                <h2 className="text-4xl font-bold mb-2">
+                <h2 className="text-2xl md:xl lg:4xl font-bold mb-2">
                   {sec.title} <br /> {sec.subtitle}
                 </h2>
-                <p className="text-[#B1B1B1] text-xl">{sec.text}</p>
+                <p className="text-[#B1B1B1] text-lg md:lg lg:xl">{sec.text}</p>
               </div>
               <div
                 className={`flex justify-center ${
