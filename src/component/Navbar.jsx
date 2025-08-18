@@ -51,7 +51,7 @@ const Navbar = () => {
               >
                 {item.name}
                 {item.name !== 'Solutions & Services' && item.name !== 'AI-CRM' && item.name !== 'About us' && item.name !== 'Contact us' && (
-                  <span className="ml-1"><BiChevronDown /></span>
+                  <span className="ml-1"></span>
                 )}
               </button>
             </div>
