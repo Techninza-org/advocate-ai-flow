@@ -98,9 +98,7 @@ const Navbar = () => {
                 onClick={() => scrollToSection(item.id)}
               >
                 {item.name}
-                {item.name !== 'Solutions & Services' && item.name !== 'AI-CRM' && item.name !== 'About us' && item.name !== 'Contact us' && (
-                  <BiChevronDown size={20} />
-                )}
+                {item.name !== 'Solutions & Services' && item.name !== 'AI-CRM' && item.name !== 'About us' && item.name !== 'Contact us' }
               </button>
             ))}
             <button className="mt-4 border border-white text-white px-4 py-2 font-medium rounded-md hover:bg-gray-800 transition-colors w-full">
