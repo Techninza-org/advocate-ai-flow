@@ -38,7 +38,7 @@ const testimonials = [
     video: false,
   },
   {
-    img: "  /img6.png",
+    img: "/img6.png",
     name: "Consulting & AI Strategy –",
     position: " Your roadmap to legal AI adoption",
     text: "Advisory services for governments, law firms, and corporates to design, deploy, and scale AI-native legal ecosystems.",
