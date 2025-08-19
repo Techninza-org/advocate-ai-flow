@@ -12,9 +12,9 @@ const Footer = () => {
     <footer className="bg-black" id='contactSection'>
       <div className="max-w-5xl mx-auto py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8 text-white">
+        <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 sm:gap-8 text-white">
           {/* Logo and Company Name */}
-          <div className="col-span-2 md:col-span-1 flex items-start">
+          <div className="xs:col-span-2 md:col-span-1 flex items-start">
             <div className="flex items-center">
               <div className="bg-white flex justify-center items-center p-1 rounded">
                 <img 
@@ -46,18 +46,8 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Legal */}
-          {/* <div className="mt-0">
-            <h3 className="text-base sm:text-lg font-semibold text-white mb-3">Legal</h3>
-            <ul className="space-y-2 text-sm sm:text-base">
-              <li className="hover:text-[#BCBCBC] cursor-pointer transition-colors">Terms</li>
-              <li className="hover:text-[#BCBCBC] cursor-pointer transition-colors">Privacy Policy</li>
-              <li className="hover:text-[#BCBCBC] cursor-pointer transition-colors">Security Policy</li>
-            </ul>
-          </div> */}
-
           {/* About us */}
-          <div className="col-span-2 md:col-span-1 mt-0">
+          <div className="xs:col-span-2 md:col-span-1 mt-0">
             <h3 className="text-base sm:text-lg font-semibold text-white mb-3">About us</h3>
             <div className="text-sm sm:text-base space-y-2">
               <p>
@@ -65,7 +55,6 @@ const Footer = () => {
                 <a href="mailto:support@deepcrucs.ai" className="hover:text-[#BCBCBC] transition-colors">
                   support@deepcrucs.ai
                 </a>
-                
               </p>
               <p>
                 <a href="mailto:support@deepcrucs.ai" className="hover:text-[#BCBCBC] transition-colors">
@@ -75,16 +64,14 @@ const Footer = () => {
               <p>
                 <span className="font-medium">Address:</span><br />
                 Delhi NCR
-                {/* House No.81,<br />
-                usaiuabsubsab */}
               </p>
             </div>
           </div>
 
           {/* Social */}
-          <div className="col-span-2 md:col-span-1 mt-0">
+          <div className="xs:col-span-2 md:col-span-1 mt-0">
             <h3 className="text-base sm:text-lg font-semibold text-white mb-3">Social</h3>
-            <div className="flex items-center space-x-4 text-lg sm:text-xl text-white">
+            <div className="flex items-center flex-wrap gap-4 text-lg sm:text-xl text-white">
               <a href="#" aria-label="Facebook" className="hover:text-blue-600 transition-colors">
                 <FaFacebookF />
               </a>

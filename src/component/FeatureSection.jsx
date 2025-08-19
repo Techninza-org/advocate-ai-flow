@@ -64,7 +64,7 @@ const FeatureSection = () => {
           <div className="bg-white h-full rounded-2xl overflow-hidden relative group" >
             <div className="rounded-xl sm:rounded-2xl flex justify-center items-center mb-6 sm:mb-8 overflow-hidden px-4 relative z-10" style={{ backgroundImage: "url('/bb1.png')", backgroundSize: "cover", backgroundPosition: "center" }}>
               <img 
-                src="/b1.png" 
+                src="/Case Diary.png" 
                 alt="Personalized Dashboard" 
                 className="w-full h-full object-contain rounded-lg mt-4" 
                 loading="lazy"
@@ -83,7 +83,7 @@ const FeatureSection = () => {
             <div className="absolute inset-0  bg-cover bg-center opacity-10 group-hover:opacity-20 transition-opacity duration-300"></div>
             <div className="bg-[#DCE1FE] rounded-xl sm:rounded-2xl flex justify-center items-center mb-6 sm:mb-8 overflow-hidden px-4 relative z-10" style={{ backgroundImage: "url('/bb2.png')", backgroundSize: "cover", backgroundPosition: "center" }}>
               <img 
-                src="/b2.png" 
+                src="/Lead management.png" 
                 alt="Dashboard Interface" 
                 className="w-full h-full object-contain rounded-lg mt-4" 
                 loading="lazy"
@@ -107,7 +107,7 @@ const FeatureSection = () => {
             <div className="absolute inset-0 bg-cover bg-center opacity-10 group-hover:opacity-20 transition-opacity duration-300"></div>
             <div className="bg-[#f2adbf] rounded-xl sm:rounded-2xl flex justify-center items-center mb-6 sm:mb-8 overflow-hidden px-4 relative z-10" style={{ backgroundImage: "url('/bb3.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}>
               <img 
-                src="/b3.png" 
+                src="/Deal Management.png" 
                 alt="Transparent Dashboard" 
                 className="w-full h-full object-contain rounded-lg mt-4" 
                 loading="lazy"
@@ -126,7 +126,7 @@ const FeatureSection = () => {
             <div className="absolute inset-0 bg-cover bg-center opacity-10 group-hover:opacity-20 transition-opacity duration-300"></div>
             <div className=" rounded-xl sm:rounded-2xl flex justify-center items-center mb-6 sm:mb-8 overflow-hidden px-4 relative z-10" style={{ backgroundImage: "url('/bb4.png')", backgroundSize: "cover", backgroundPosition: "center", }}>
               <img 
-                src="/b4.png" 
+                src="/To-Do List.png" 
                 alt="Guided Interface" 
                 className="w-full h-full object-contain rounded-lg mt-4" 
                 loading="lazy"
@@ -149,7 +149,7 @@ const FeatureSection = () => {
             <div className="absolute inset-0 bg-cover bg-center opacity-10 group-hover:opacity-20 transition-opacity duration-300"></div>
             <div className="bg-[#eacea7] rounded-xl sm:rounded-2xl flex justify-center items-center mb-6 sm:mb-8 overflow-hidden px-4 relative z-10" style={{ backgroundImage: "url('/bb5.png')", backgroundSize: "cover", backgroundPosition: "center" }}>
               <img 
-                src="/b5.png" 
+                src="/Billing & Invoicing.png" 
                 alt="Transparent Dashboard" 
                 className="w-full h-full object-contain rounded-lg mt-4" 
                 loading="lazy"
@@ -168,7 +168,7 @@ const FeatureSection = () => {
             <div className="absolute inset-0 bg-cover bg-center opacity-10 group-hover:opacity-20 transition-opacity duration-300"></div>
             <div className="bg-[#c4ecb3] rounded-xl sm:rounded-2xl flex justify-center items-center mb-6 sm:mb-8 overflow-hidden px-4 relative z-10" style={{ backgroundImage: "url('/bb6.png')", backgroundSize: "cover", backgroundPosition: "center" }}>
               <img 
-                src="/b6.png" 
+                src="/Case Management.png" 
                 alt="Guided Interface" 
                 className="w-full h-full object-contain rounded-lg mt-4" 
                 loading="lazy"
