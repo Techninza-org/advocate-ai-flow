@@ -38,12 +38,12 @@ const FeatureSection = () => {
     <img
       src="/Rectangle 3.png"
       alt="Right small"
-      className="hidden sm:block absolute right-0 sm:-right-8 md:-right-14 bottom-4 sm:bottom-10 w-40 sm:w-48 md:w-56 lg:w-72 h-36 sm:h-48 md:h-64 rounded-lg sm:rounded-xl"
+      className="hidden sm:block absolute right-0 sm:-right-8 z-50 md:-right-14 bottom-4 sm:bottom-10 w-40 sm:w-48 md:w-56 lg:w-72 h-36 sm:h-48 md:h-64 rounded-lg sm:rounded-xl"
     />
   </div>
   
   {/* Gradient overlay */}
-  <div className="absolute bottom-0 left-0 w-full h-40 sm:h-60 bg-gradient-to-b from-gray-50 to-transparent"></div>
+  <div className="absolute bottom-0 left-0 w-full h-20 md:h-60 bg-white opacity-80"></div>
 </section>
       
 
@@ -186,9 +186,9 @@ const FeatureSection = () => {
 
       <section className="relative bg-black text-white overflow-hidden">
         {/* Gradient Top Border */}
-        <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-gray-100 to-transparent"></div>
+<div className="absolute top-0 left-0 w-full h-20 md:h-40 bg-gradient-to-b from-gray-100 to-transparent"></div>
 
-        <div className="mt-40 relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+        <div className="mt-10 lg:mt-40 relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
           {/* Heading */}
           <div className="text-center mb-12">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">

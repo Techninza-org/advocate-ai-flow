@@ -5,39 +5,52 @@ import { FiMenu } from "react-icons/fi";
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
-  const scrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-    setIsMobileMenuOpen(false); // Close mobile menu if open
-  };
+ const scrollToSection = (sectionId) => {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    // header ki height lelo (responsive ke hisaab se)
+    const headerHeight = document.querySelector("header")?.offsetHeight || 0;
+
+    // thoda extra spacing (e.g. 24px)
+    const extraOffset = 96;
+
+    const sectionPosition =
+      section.getBoundingClientRect().top + window.scrollY - (headerHeight + extraOffset);
+
+    window.scrollTo({
+      top: sectionPosition,
+      behavior: "smooth",
+    });
+  }
+
+  setIsMobileMenuOpen(false); // mobile menu close karna
+};
+
+
 
   return (
     <div className="sticky top-0 z-99 bg-black">
       <nav className="flex items-center px-4 sm:px-6 lg:px-8 py-3 sm:py-4 justify-between max-w-7xl mx-auto">
         {/* Left side - Logo */}
+        <a href="/">
         <div className="flex items-center">
           <div className="bg-white p-1 sm:p-2 rounded-md flex items-center justify-center">
-            <a href="/">
             <img 
               src="/Group 48098144.png" 
               alt="Logo" 
               className="h-6 sm:h-8 w-6 sm:w-8" 
               loading="lazy"
-              />
-              </a>
+            />
           </div>
-          <a href="/">
           <span className="ml-2 sm:ml-3 font-bold text-xl sm:text-2xl md:text-3xl text-white">
             Deepcrucs.ai
             <br /> 
             <p className="m-0 text-xs sm:text-sm md:text-base text-white font-light">
               Innovate, integrate, elevate
             </p>
-            </span>
-            </a>
-        </div>
+          </span>
+          </div>
+          </a>
         
         {/* Center - Navigation items (desktop) */}
         <div className="hidden md:flex items-center gap-4 lg:gap-8 justify-between absolute left-1/2 transform -translate-x-1/2">
@@ -103,9 +116,11 @@ const Navbar = () => {
             </button>
           ))}
           <div className="flex flex-col space-y-3 pt-2">
+            <a href="http://43.204.149.188/app/login">
             <button className="border border-white text-white px-4 py-2 font-medium rounded-md hover:bg-gray-800 transition-colors w-full">
               Login/Register
-            </button>
+              </button>
+              </a>
             <a href="https://forms.gle/caijcf38pDjETCeb9">
               <button className="bg-white cursor-pointer text-black px-4 py-2 font-medium rounded-md hover:bg-gray-100 transition-colors w-full">
                 Book a Demo

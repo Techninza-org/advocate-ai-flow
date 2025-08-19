@@ -111,7 +111,7 @@ Technology Partners
             <div className="w-full bg-white mt-6 sm:mt-8 md:mt-10">
               <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-2 items-center justify-items-center px-4 sm:px-10">
                 {logos.map((logo, index) => (
-                  <div key={index} className="h-8 sm:h-12 md:h-14 lg:h-16 w-full flex items-center justify-center p-2">
+                  <div key={index} className="h-16 sm:h-12 md:h-14 lg:h-16 w-full flex items-center justify-center p-2">
                     <img
                       src={logo}
                       alt={`Logo ${index}`}

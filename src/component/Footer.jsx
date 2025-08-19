@@ -8,12 +8,26 @@ import {
 } from "react-icons/fa";
 
 const Footer = () => {
-  const scrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+ 
+ const scrollToSection = (sectionId) => {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    // header ki height lelo (responsive ke hisaab se)
+    const headerHeight = document.querySelector("header")?.offsetHeight || 0;
+
+    // thoda extra spacing (e.g. 24px)
+    const extraOffset = 48;
+
+    const sectionPosition =
+      section.getBoundingClientRect().top + window.scrollY - (headerHeight + extraOffset);
+
+    window.scrollTo({
+      top: sectionPosition,
+      behavior: "smooth",
+    });
+  }
+
+};
 
   return (
     <footer className="bg-black" id='contactSection'>
@@ -56,17 +70,29 @@ const Footer = () => {
                 className="hover:text-[#BCBCBC] cursor-pointer transition-colors"
                 onClick={() => scrollToSection('aiCrmSection')}
               >
-                CRM
+                AI-CRM
               </li>
-              <li className="hover:text-[#BCBCBC] cursor-pointer transition-colors">
-                AI Features
-              </li>
+              {/* <li className="hover:text-[#BCBCBC] cursor-pointer transition-colors">
+                AI-CRM
+              </li> */}
               <li 
                 className="hover:text-[#BCBCBC] cursor-pointer transition-colors"
                 onClick={() => scrollToSection('solutionsSection')}
               >
                 Solutions & Services
               </li>
+               <li 
+                className="hover:text-[#BCBCBC] cursor-pointer transition-colors"
+                onClick={() => scrollToSection('aboutSection')}
+              >
+                About Us
+              </li>
+               {/* <li 
+                className="hover:text-[#BCBCBC] cursor-pointer transition-colors"
+                onClick={() => scrollToSection('contactSection')}
+              >
+                Contact Us
+              </li> */}
             </ul>
           </div>
 
