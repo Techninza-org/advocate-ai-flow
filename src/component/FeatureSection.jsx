@@ -3,6 +3,7 @@ import React from 'react';
 const FeatureSection = () => {
   return (
     <div>
+      
       <section className="bg-gray-100 py-8 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-16 relative overflow-hidden" id='aiCrmSection'>
   {/* Heading */}
   <div className="text-center max-w-5xl mx-auto">
@@ -44,7 +45,107 @@ const FeatureSection = () => {
   
   {/* Gradient overlay */}
   <div className="absolute bottom-0 left-0 w-full h-20 md:h-60 bg-white opacity-80"></div>
-</section>
+      </section>
+      
+
+
+      <section className="relative bg-black text-white overflow-hidden">
+        {/* Gradient Top Border */}
+<div className="absolute top-0 left-0 w-full h-20 md:h-40 bg-gradient-to-b from-gray-100 to-transparent"></div>
+
+        <div className="mt-10 lg:mt-40 relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+          {/* Heading */}
+          <div className="text-center mb-12">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+              The All-in-One Agentic AI <br /> Platform for Legal Team
+            </h1>
+            <p className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">
+              Summarize documents, navigate by section, search across cases, and
+              build cross-case timelines — all powered by Deepcrucs' intelligent
+              legal agents
+            </p>
+          </div>
+
+          {/* Section Template */}
+          {[
+            {
+              title: "Cross-Case Timeline ",
+              subtitle: "Compare Events Across Cases",
+              text: "Merge timelines from multiple cases to reveal patterns, links, and strategic insights.",
+              video: "/Insight AI.mp4",
+              reverse: false,
+              tag:"Insight AI",
+              bgImage: "/timeline-bg.jpg"
+            },
+            {
+              title: "AI Document Summary ",
+              subtitle: "Turn Pages into Key Points",
+              text: "Condense lengthy legal documents into concise, accurate summaries without losing important context or details.",
+              video: "/Summarize AI.MOV",
+              reverse: true,
+              tag:"Summarize AI",
+              bgImage: "/summary-bg.jpg"
+            },
+            {
+              title: "Document Chat Search",
+              subtitle: "Ask Your File Anything",
+              text: "Query your documents in plain language and get instant, pinpoint answers directly from the file's content.",
+              video: "/Ask AI.MOV",
+              reverse: false,
+              tag:"Ask AI",
+              bgImage: "/search-bg.jpg"
+            },
+            {
+              title: "Smart Annotations",
+              subtitle: "Navigate by Section",
+              text: "Automatically generate an indexed view of your document with clickable sections linked to exact locations.",
+              video: "/Annotate AI.MOV",
+              reverse: true,
+              tag:"Annotate AI",
+              bgImage: "/annotate-bg.jpg"
+            },
+          ].map((sec, i) => (
+            <div
+              key={i}
+              className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20 ${
+                sec.reverse ? "lg:flex-row-reverse" : ""
+              }`}
+            >
+              <div className={`${sec.reverse ? "lg:order-2" : ""} relative`}>
+                <div className="absolute inset-0 bg-[url('${sec.bgImage}')] bg-cover bg-center opacity-5 -z-10 rounded-xl"></div>
+                <span className="inline-block bg-white text-black font-semibold text-sm px-3 py-1 rounded-full mb-4">
+                  {sec.tag}
+                </span>
+                <h2 className="text-2xl md:xl lg:4xl font-bold mb-2">
+                  {sec.title} <br /> {sec.subtitle}
+                </h2>
+                <p className="text-[#B1B1B1] text-lg md:lg lg:xl">{sec.text}</p>
+              </div>
+              <div
+                className={`flex justify-center ${
+                  sec.reverse ? "lg:justify-start lg:order-1" : "lg:justify-end"
+                }`}
+              >
+                <div className="bg-gray-800 rounded-xl overflow-hidden shadow-lg p-2 w-full max-w-lg relative group">
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="rounded-lg w-full"
+                    disablePictureInPicture
+                    disableRemotePlayback
+                  >
+                    <source src={sec.video} type="video/mp4" />
+                    Your browser does not support HTML5 video.
+                  </video>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
       
 
       
@@ -184,103 +285,7 @@ const FeatureSection = () => {
         </div>
       </div>
 
-      <section className="relative bg-black text-white overflow-hidden">
-        {/* Gradient Top Border */}
-<div className="absolute top-0 left-0 w-full h-20 md:h-40 bg-gradient-to-b from-gray-100 to-transparent"></div>
-
-        <div className="mt-10 lg:mt-40 relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
-          {/* Heading */}
-          <div className="text-center mb-12">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
-              The All-in-One Agentic AI <br /> Platform for Legal Team
-            </h1>
-            <p className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">
-              Summarize documents, navigate by section, search across cases, and
-              build cross-case timelines — all powered by Deepcrucs' intelligent
-              legal agents
-            </p>
-          </div>
-
-          {/* Section Template */}
-          {[
-            {
-              title: "Cross-Case Timeline ",
-              subtitle: "Compare Events Across Cases",
-              text: "Merge timelines from multiple cases to reveal patterns, links, and strategic insights.",
-              video: "/Insight AI.mp4",
-              reverse: false,
-              tag:"Insight AI",
-              bgImage: "/timeline-bg.jpg"
-            },
-            {
-              title: "AI Document Summary ",
-              subtitle: "Turn Pages into Key Points",
-              text: "Condense lengthy legal documents into concise, accurate summaries without losing important context or details.",
-              video: "/Summarize AI.MOV",
-              reverse: true,
-              tag:"Summarize AI",
-              bgImage: "/summary-bg.jpg"
-            },
-            {
-              title: "Document Chat Search",
-              subtitle: "Ask Your File Anything",
-              text: "Query your documents in plain language and get instant, pinpoint answers directly from the file's content.",
-              video: "/Ask AI.MOV",
-              reverse: false,
-              tag:"Ask AI",
-              bgImage: "/search-bg.jpg"
-            },
-            {
-              title: "Smart Annotations",
-              subtitle: "Navigate by Section",
-              text: "Automatically generate an indexed view of your document with clickable sections linked to exact locations.",
-              video: "/Annotate AI.MOV",
-              reverse: true,
-              tag:"Annotate AI",
-              bgImage: "/annotate-bg.jpg"
-            },
-          ].map((sec, i) => (
-            <div
-              key={i}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20 ${
-                sec.reverse ? "lg:flex-row-reverse" : ""
-              }`}
-            >
-              <div className={`${sec.reverse ? "lg:order-2" : ""} relative`}>
-                <div className="absolute inset-0 bg-[url('${sec.bgImage}')] bg-cover bg-center opacity-5 -z-10 rounded-xl"></div>
-                <span className="inline-block bg-white text-black font-semibold text-sm px-3 py-1 rounded-full mb-4">
-                  {sec.tag}
-                </span>
-                <h2 className="text-2xl md:xl lg:4xl font-bold mb-2">
-                  {sec.title} <br /> {sec.subtitle}
-                </h2>
-                <p className="text-[#B1B1B1] text-lg md:lg lg:xl">{sec.text}</p>
-              </div>
-              <div
-                className={`flex justify-center ${
-                  sec.reverse ? "lg:justify-start lg:order-1" : "lg:justify-end"
-                }`}
-              >
-                <div className="bg-gray-800 rounded-xl overflow-hidden shadow-lg p-2 w-full max-w-lg relative group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="rounded-lg w-full"
-                    disablePictureInPicture
-                    disableRemotePlayback
-                  >
-                    <source src={sec.video} type="video/mp4" />
-                    Your browser does not support HTML5 video.
-                  </video>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      
       </div>
       </section>
       </div>

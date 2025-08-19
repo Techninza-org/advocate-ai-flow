@@ -55,9 +55,9 @@ const Navbar = () => {
         {/* Center - Navigation items (desktop) */}
         <div className="hidden md:flex items-center gap-4 lg:gap-8 justify-between absolute left-1/2 transform -translate-x-1/2">
           {[
+          { name: 'AI-CRM', id: 'aiCrmSection' },
             { name: 'Platform', id: 'platformSection' },
             { name: 'Solutions & Services', id: 'solutionsSection' },
-            { name: 'AI-CRM', id: 'aiCrmSection' },
             { name: 'About us', id: 'aboutSection' },
             { name: 'Contact us', id: 'contactSection' }
           ].map((item) => (
@@ -101,9 +101,9 @@ const Navbar = () => {
       <div className={`md:hidden bg-black text-white ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
         <div className="flex flex-col space-y-4 px-6 py-4 border-t border-gray-800">
           {[
+           { name: 'AI-CRM', id: 'aiCrmSection' },
             { name: 'Platform', id: 'platformSection' },
             { name: 'Solutions & Services', id: 'solutionsSection' },
-            { name: 'AI-CRM', id: 'aiCrmSection' },
             { name: 'About us', id: 'aboutSection' },
             { name: 'Contact us', id: 'contactSection' }
           ].map((item) => (
