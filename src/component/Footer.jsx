@@ -8,6 +8,13 @@ import {
 } from "react-icons/fa";
 
 const Footer = () => {
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <footer className="bg-black" id='contactSection'>
       <div className="max-w-5xl mx-auto py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
@@ -39,10 +46,27 @@ const Footer = () => {
           <div className="mt-0">
             <h3 className="text-base sm:text-lg font-semibold text-white mb-3">Overview</h3>
             <ul className="space-y-2 text-sm sm:text-base">
-              <li className="hover:text-[#BCBCBC] cursor-pointer transition-colors">Platform</li>
-              <li className="hover:text-[#BCBCBC] cursor-pointer transition-colors">CRM</li>
-              <li className="hover:text-[#BCBCBC] cursor-pointer transition-colors">AI Features</li>
-              <li className="hover:text-[#BCBCBC] cursor-pointer transition-colors">Solutions & Services</li>
+              <li 
+                className="hover:text-[#BCBCBC] cursor-pointer transition-colors"
+                onClick={() => scrollToSection('platformSection')}
+              >
+                Platform
+              </li>
+              <li 
+                className="hover:text-[#BCBCBC] cursor-pointer transition-colors"
+                onClick={() => scrollToSection('aiCrmSection')}
+              >
+                CRM
+              </li>
+              <li className="hover:text-[#BCBCBC] cursor-pointer transition-colors">
+                AI Features
+              </li>
+              <li 
+                className="hover:text-[#BCBCBC] cursor-pointer transition-colors"
+                onClick={() => scrollToSection('solutionsSection')}
+              >
+                Solutions & Services
+              </li>
             </ul>
           </div>
 
@@ -64,6 +88,12 @@ const Footer = () => {
               <p>
                 <span className="font-medium">Address:</span><br />
                 Delhi NCR
+              </p>
+              <p 
+                className="hover:text-[#BCBCBC] cursor-pointer transition-colors"
+                onClick={() => scrollToSection('aboutSection')}
+              >
+                Learn more about us
               </p>
             </div>
           </div>
