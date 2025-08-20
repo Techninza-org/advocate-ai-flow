@@ -141,7 +141,7 @@ const FeatureSection = () => {
   </div>
   
   {/* Gradient overlay */}
-  <div className="absolute bottom-0 left-0 w-full h-20 md:h-60 bg-white opacity-80"></div>
+  <div className="absolute bottom-0 left-0 w-full h-block md:h-60 bg-white opacity-80"></div>
       </section>
       
 
