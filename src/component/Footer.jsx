@@ -36,6 +36,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 sm:gap-8 text-white">
           {/* Logo and Company Name */}
           <div className="xs:col-span-2 md:col-span-1 flex items-start">
+            <a href="/">
             <div className="flex items-center">
               <div className="bg-white flex justify-center items-center p-1 rounded">
                 <img 
@@ -53,7 +54,8 @@ const Footer = () => {
                   Innovate, integrate, elevate
                 </p>
               </div>
-            </div>
+              </div>
+              </a>
           </div>
 
           {/* Overview */}
@@ -101,7 +103,7 @@ const Footer = () => {
             <h3 className="text-base sm:text-lg font-semibold text-white mb-3">About us</h3>
             <div className="text-sm sm:text-base space-y-2">
               <p>
-                <span className="font-medium">Contact Us:</span><br />
+                <span className="font-medium opacity-60">Contact Us:</span><br />
                 <a href="mailto:support@deepcrucs.ai" className="hover:text-[#BCBCBC] transition-colors">
                   support@deepcrucs.ai
                 </a>
@@ -112,15 +114,15 @@ const Footer = () => {
                 </a>
               </p>
               <p>
-                <span className="font-medium">Address:</span><br />
+                <span className="font-medium opacity-60">Address:</span><br />
                 Delhi NCR
               </p>
-              <p 
+              {/* <p 
                 className="hover:text-[#BCBCBC] cursor-pointer transition-colors"
                 onClick={() => scrollToSection('aboutSection')}
               >
                 Learn more about us
-              </p>
+              </p> */}
             </div>
           </div>
 
@@ -149,7 +151,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400 text-xs sm:text-sm">
-          © {new Date().getFullYear()} AI Workflow | All Rights Reserved
+          © {new Date().getFullYear()} Deepcrucs.ai | All Rights Reserved
         </div>
       </div>
     </footer>
