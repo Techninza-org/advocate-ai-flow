@@ -5,6 +5,7 @@ import {
   FaTwitter,
   FaYoutube,
   FaWordpress,
+  FaLinkedin,
 } from "react-icons/fa";
 
 const Footer = () => {
@@ -62,18 +63,19 @@ const Footer = () => {
           <div className="mt-0">
             <h3 className="text-base sm:text-lg font-semibold text-white mb-3">Overview</h3>
             <ul className="space-y-2 text-sm sm:text-base">
+               <li 
+                className="hover:text-[#BCBCBC] cursor-pointer transition-colors"
+                onClick={() => scrollToSection('aiCrmSection')}
+              >
+                AI-CRM
+              </li>
               <li 
                 className="hover:text-[#BCBCBC] cursor-pointer transition-colors"
                 onClick={() => scrollToSection('platformSection')}
               >
                 Platform
               </li>
-              <li 
-                className="hover:text-[#BCBCBC] cursor-pointer transition-colors"
-                onClick={() => scrollToSection('aiCrmSection')}
-              >
-                AI-CRM
-              </li>
+             
               {/* <li className="hover:text-[#BCBCBC] cursor-pointer transition-colors">
                 AI-CRM
               </li> */}
@@ -128,23 +130,24 @@ const Footer = () => {
 
           {/* Social */}
           <div className="xs:col-span-2 md:col-span-1 mt-0">
-            <h3 className="text-base sm:text-lg font-semibold text-white mb-3">Social</h3>
+            <h3 className="text-base sm:text-lg font-semibold text-white mb-3">Social Media</h3>
             <div className="flex items-center flex-wrap gap-4 text-lg sm:text-xl text-white">
-              <a href="#" aria-label="Facebook" className="hover:text-blue-600 transition-colors">
+              {/* <a href="#" aria-label="Facebook" className="hover:text-blue-600 transition-colors">
                 <FaFacebookF />
-              </a>
+              </a> */}
               <a href="#" aria-label="Instagram" className="hover:text-pink-600 transition-colors">
                 <FaInstagram />
+              </a>
+              <a href="#" aria-label="YouTube" className="transition-colors">
+                <FaLinkedin />
               </a>
               <a href="#" aria-label="Twitter" className="hover:text-blue-400 transition-colors">
                 <FaTwitter />
               </a>
-              <a href="#" aria-label="YouTube" className="hover:text-red-600 transition-colors">
-                <FaYoutube />
-              </a>
-              <a href="#" aria-label="WordPress" className="hover:text-blue-800 transition-colors">
+              
+              {/* <a href="#" aria-label="WordPress" className="hover:text-blue-800 transition-colors">
                 <FaWordpress />
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

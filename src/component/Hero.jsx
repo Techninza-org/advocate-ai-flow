@@ -1,13 +1,24 @@
 import React from 'react';
 
 const Hero = () => {
+    // Function to handle smooth scrolling
+    const handleExploreClick = () => {
+        const allInOneSection = document.getElementById('allInOneSection');
+        if (allInOneSection) {
+            allInOneSection.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    };
+    
     return (
         <div 
             className="relative h-96 md:h-96 lg:h-screen xl:h-screen bg-cover bg-center bg-no-repeat" 
             style={{ backgroundImage: "url('/aihero.png')" }}
         >
             {/* Overlay with better contrast control */}
-            <div className="absolute inset-0  bg-opacity-40"></div>
+            {/* <div className="absolute inset-0 bg-black bg-opacity-40"></div> */}
             
             {/* Content container with improved responsive padding and sizing */}
             <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4 sm:px-6 lg:px-8">
@@ -23,7 +34,8 @@ const Hero = () => {
                 
                 {/* Button with improved hover state and accessibility */}
                 <button 
-                    className="mt-6 sm:mt-8 bg-white text-black px-5 py-2 sm:px-6 sm:py-3 rounded-md hover:bg-gray-100 transition-colors duration-300 flex items-center focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
+                    onClick={handleExploreClick}
+                    className="mt-6 sm:mt-8 bg-white text-black cursor-pointer px-5 py-2 sm:px-6 sm:py-3 rounded-md hover:bg-gray-100 transition-colors duration-300 flex items-center focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
                 >
                     Explore Platform
                     <span className="ml-2">

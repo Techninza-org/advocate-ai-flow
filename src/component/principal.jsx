@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const PrincipleCard = ({ card, index, isActive, onClick, cardPositions, isMobile }) => {
   const { id, title, description, image, bgColor, textColor } = card;
   const { left, width, zIndex } = cardPositions;
 
   return (
+  
     <div
       key={id}
       className="absolute top-0 bottom-0 transition-all duration-700 ease-fluid"
@@ -20,7 +21,7 @@ const PrincipleCard = ({ card, index, isActive, onClick, cardPositions, isMobile
         </div>
 
         {/* Main Card Content */}
-        <div className="absolute left-12 sm:left-16 md:left-20 lg:left-24 right-0 top-0 bottom-0 p-2 sm:p-4 md:p-6 lg:p-8">
+        <div className="absolute left-12 sm:left-16 md:left-20 lg:left-24 right-0 top-0 bottom-0 p-2 sm:p-4 md:p-6 lg:p-8 ">
           <div className="flex items-center h-full overflow-hidden">
             {/* Mobile Layout - Stack vertically */}
             {isMobile && isActive ? (
@@ -60,7 +61,7 @@ const PrincipleCard = ({ card, index, isActive, onClick, cardPositions, isMobile
               <>
                 {/* Image container for desktop */}
                 <div 
-                  className={`w-1/2 md:w-[45%] h-[60%] sm:h-[70%] md:h-[80%] rounded-2xl overflow-hidden shadow-lg flex-shrink-0 transition-all duration-500 ease-fluid ${
+                  className={`w-1/2 md:w-[45%] h-[60%] sm:h-[70%] md:h-[80%] rounded-2xl flex-shrink-0 transition-all duration-500 ease-fluid flex items-center justify-center ${
                     isActive ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4 sm:-translate-x-8'
                   }`}
                   style={{ transitionDelay: isActive ? '200ms' : '0ms' }}
@@ -68,7 +69,7 @@ const PrincipleCard = ({ card, index, isActive, onClick, cardPositions, isMobile
                   <img 
                     src={image} 
                     alt={title} 
-                    className="w-full h-full object-cover" 
+                    className="h-full w-96 object-cover rounded-2xl shadow-lg" 
                     loading="lazy"
                   />
                 </div>
@@ -98,15 +99,7 @@ const PrincipleCard = ({ card, index, isActive, onClick, cardPositions, isMobile
 
 const CorePrinciples = () => {
   const [currentCard, setCurrentCard] = useState(0);
-
-  // const logos = [
-  //   "/Amazon_Web_Services_Logo.svg 1.svg", 
-  //   "/Google_Gemini_logo.svg 1.svg",
-  //   "/MongoDB_Logo.svg 1.svg", 
-  //   "/pngimg.com - chatgpt_PNG13 1.svg", 
-  //   "/67360e822fa15f7f86921343_IDX Logo Blue 1.svg",
-  //   "/Azure 1.svg"
-  // ];
+  const [isMobile, setIsMobile] = useState(false);
 
   const cards = [
     {
@@ -121,7 +114,7 @@ const CorePrinciples = () => {
       id: '02',
       title: 'Integrate',
       description: 'Seamlessly connect systems, documents, and processes to create unified, intelligent legal workflows.',
-      image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2938&auto=format&fit=crop',
+      image: '/Integrate.png',
       bgColor: 'bg-[#DAD4C9]',
       textColor: 'text-black'
     },
@@ -139,10 +132,7 @@ const CorePrinciples = () => {
     setCurrentCard(index);
   };
 
-  // Check if mobile
-  const [isMobile, setIsMobile] = React.useState(false);
-  
-  React.useEffect(() => {
+  useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
@@ -159,7 +149,7 @@ const CorePrinciples = () => {
   const TOTAL_FOLDED_SPACE = (CARD_COUNT - 1) * FOLDED_WIDTH;
 
   return (
-    <div className="font-sans bg-gray-100 py-12 sm:py-16 md:py-20 overflow-hidden">
+    <div className="font-sans bg-gray-100 py-12 sm:py-16 md:py-20 overflow-hidden mx-0 md:mx-0 my-16 md:my-0">
       {/* Global styles for custom animation easing */}
       <style jsx global>{`
         .ease-fluid {
@@ -172,27 +162,7 @@ const CorePrinciples = () => {
           <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl mb-2 sm:mb-4 tracking-tight font-semibold text-black">
             Our Core Principles
           </h1>
-          {/* <div className="w-16 sm:w-20 md:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-gray-400 to-gray-300 rounded-full"></div> */}
         </div>
-
-        {/* Mobile Card Selector - Show on small screens */}
-        {/* <div className="md:hidden mb-6">
-          <div className="flex justify-center space-x-4">
-            {cards.map((card, index) => (
-              <button
-                key={card.id}
-                onClick={() => handleCardClick(index)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                  index === currentCard
-                    ? 'bg-gray-800 text-white'
-                    : 'bg-white text-gray-600 border border-gray-200'
-                }`}
-              >
-                {card.id} {card.title}
-              </button>
-            ))}
-          </div>
-        </div> */}
 
         {/* Animation Container */}
         <div className="relative w-full h-[400px] sm:h-[450px] md:h-[500px] mb-12 sm:mb-16 md:mb-20">
@@ -229,10 +199,6 @@ const CorePrinciples = () => {
             );
           })}
         </div>
-
-        {/* Trusted By Section */}
-        {/* Creative Company Section */}
-     
       </div>
     </div>
   );

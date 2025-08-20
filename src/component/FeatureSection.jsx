@@ -3,53 +3,7 @@ import React from 'react';
 const FeatureSection = () => {
   return (
     <div>
-      
-      <section className="bg-gray-100 py-8 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-16 relative overflow-hidden" id='aiCrmSection'>
-  {/* Heading */}
-  <div className="text-center max-w-5xl mx-auto">
-    <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium text-gray-900">
-      The Legal Dashboard
-    </h2>
-    <p className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-[#AFA18F] mt-1 sm:mt-2 font-medium">
-      That Works Like You Do
-    </p>
-    <p className="text-lg sm:text-base md:text-4xl text-[#878787] mt-3 sm:mt-4 px-4 sm:px-6 py-2 sm:py-3 rounded-md inline-block">
-      Deepcrucs brings your cases, documents, and to-dos into one smart,
-      streamlined command center.
-    </p>
-  </div>
-
-  {/* Images */}
-  <div className="relative mt-8 sm:mt-12 md:mt-16 flex justify-center">
-    {/* Left Small Image - Hidden on smallest screens */}
-    <img
-      src="/Rectangle 2.png"
-      alt="Left small"
-      className="hidden sm:block absolute left-0 sm:-left-8 md:-left-14 top-1/4 sm:top-1/3 -translate-y-1/2 w-40 sm:w-48 md:w-56 lg:w-72 h-32 sm:h-40 md:h-56 rounded-lg sm:rounded-xl"
-    />
-
-    {/* Main Center Image */}
-    <img
-      src="/0cc220677236fbb2f0cbd1da198f100bb19b2154.png"
-      alt="Main Dashboard"
-      className="w-full max-w-7xl rounded-2xl sm:rounded-3xl lg:rounded-4xl shadow-lg sm:shadow-xl md:shadow-2xl"
-    />
-
-    {/* Right Small Image - Hidden on smallest screens */}
-    <img
-      src="/Rectangle 3.png"
-      alt="Right small"
-      className="hidden sm:block absolute right-0 sm:-right-8 z-50 md:-right-14 bottom-4 sm:bottom-10 w-40 sm:w-48 md:w-56 lg:w-72 h-36 sm:h-48 md:h-64 rounded-lg sm:rounded-xl"
-    />
-  </div>
-  
-  {/* Gradient overlay */}
-  <div className="absolute bottom-0 left-0 w-full h-20 md:h-60 bg-white opacity-80"></div>
-      </section>
-      
-
-
-      <section className="relative bg-black text-white overflow-hidden">
+      <section className="relative bg-black text-white overflow-hidden"id="allInOneSection">
         {/* Gradient Top Border */}
 <div className="absolute top-0 left-0 w-full h-20 md:h-40 bg-gradient-to-b from-gray-100 to-transparent"></div>
 
@@ -146,6 +100,53 @@ const FeatureSection = () => {
           ))}
         </div>
       </section>
+      
+      <section className="bg-gray-100 py-8 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-16 relative overflow-hidden" id='aiCrmSection'>
+  {/* Heading */}
+  <div className="text-center max-w-5xl mx-auto">
+    <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium text-gray-900">
+      The Legal Dashboard
+    </h2>
+    <p className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-[#AFA18F] mt-1 sm:mt-2 font-medium">
+      That Works Like You Do
+    </p>
+    <p className="text-lg sm:text-base md:text-4xl text-[#878787] mt-3 sm:mt-4 px-4 sm:px-6 py-2 sm:py-3 rounded-md inline-block">
+      Deepcrucs brings your cases, documents, and to-dos into one smart,
+      streamlined command center.
+    </p>
+  </div>
+
+  {/* Images */}
+  <div className="relative mt-8 sm:mt-12 md:mt-16 flex justify-center">
+    {/* Left Small Image - Hidden on smallest screens */}
+    <img
+      src="/Rectangle 2.png"
+      alt="Left small"
+      className="hidden sm:block absolute left-0 sm:-left-8 md:-left-14 top-1/4 sm:top-1/3 -translate-y-1/2 w-40 sm:w-48 md:w-56 lg:w-72 h-32 sm:h-40 md:h-56 rounded-lg sm:rounded-xl"
+    />
+
+    {/* Main Center Image */}
+    <img
+      src="/0cc220677236fbb2f0cbd1da198f100bb19b2154.png"
+      alt="Main Dashboard"
+      className="w-full max-w-7xl rounded-2xl sm:rounded-3xl lg:rounded-4xl shadow-lg sm:shadow-xl md:shadow-2xl"
+    />
+
+    {/* Right Small Image - Hidden on smallest screens */}
+    <img
+      src="/Rectangle 3.png"
+      alt="Right small"
+      className="hidden sm:block absolute right-0 sm:-right-8 z-50 md:-right-14 bottom-4 sm:bottom-10 w-40 sm:w-48 md:w-56 lg:w-72 h-36 sm:h-48 md:h-64 rounded-lg sm:rounded-xl"
+    />
+  </div>
+  
+  {/* Gradient overlay */}
+  <div className="absolute bottom-0 left-0 w-full h-20 md:h-60 bg-white opacity-80"></div>
+      </section>
+      
+
+
+      
       
 
       

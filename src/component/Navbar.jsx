@@ -5,30 +5,30 @@ import { FiMenu } from "react-icons/fi";
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
- const scrollToSection = (sectionId) => {
-  const section = document.getElementById(sectionId);
-  if (section) {
-    // header ki height lelo (responsive ke hisaab se)
-    const headerHeight = document.querySelector("header")?.offsetHeight || 0;
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      // header ki height lelo (responsive ke hisaab se)
+      const headerHeight = document.querySelector("header")?.offsetHeight || 0;
 
-    // thoda extra spacing (e.g. 24px)
-    const extraOffset = 96;
+      // thoda extra spacing (e.g. 24px)
+      const extraOffset = 96;
 
-    const sectionPosition =
-      section.getBoundingClientRect().top + window.scrollY - (headerHeight + extraOffset);
+      const sectionPosition =
+        section.getBoundingClientRect().top + window.scrollY - (headerHeight + extraOffset);
 
-    window.scrollTo({
-      top: sectionPosition,
-      behavior: "smooth",
-    });
-  }
+      window.scrollTo({
+        top: sectionPosition,
+        behavior: "smooth",
+      });
+    }
 
-  setIsMobileMenuOpen(false); // mobile menu close karna
-};
+    setIsMobileMenuOpen(false); // mobile menu close karna
+  };
 
   return (
     <div className="sticky top-0 z-50 bg-black">
-      <nav className="flex items-center px-4 sm:px-6 lg:px-8 py-3 sm:py-4 justify-between max-w-7xl mx-auto">
+      <nav className="flex items-center px-4 sm:px-6 lg:px-8 py-3 sm:py-4 justify-between max-w-7xl mx-auto w-full">
         {/* Left side - Logo */}
         <a href="/">
           <div className="flex items-center">
@@ -55,7 +55,7 @@ const Navbar = () => {
           {[
             { name: 'AI-CRM', id: 'aiCrmSection' },
             { name: 'Platform', id: 'platformSection' },
-            { name: 'Solutions $ Services', id: 'solutionsSection' },
+            { name: 'Solutions & Services', id: 'solutionsSection' },
             { name: 'About us', id: 'aboutSection' },
             { name: 'Contact us', id: 'contactSection' }
           ].map((item) => (
@@ -77,9 +77,12 @@ const Navbar = () => {
               Login/Register
             </button>
           </a>
+          
+          {/* Book a Demo button - Always visible */}
           <a href="https://forms.gle/caijcf38pDjETCeb9">
-            <button className="hidden sm:block cursor-pointer bg-white h-10 md:h-12 w-28 sm:w-32 md:w-36 text-black px-2 md:px-4 py-1 md:py-2 font-medium sm:font-bold rounded-md hover:bg-gray-100 transition-colors text-xs sm:text-sm md:text-base whitespace-nowrap">
-              Book a Demo
+            <button className="cursor-pointer bg-white h-10 sm:h-10 md:h-12 w-20 sm:w-28 md:w-36 text-black px-2 md:px-4 py-1 md:py-2 font-medium sm:font-bold rounded-md hover:bg-gray-100 transition-colors text-xs sm:text-sm md:text-base whitespace-nowrap">
+              <span className="hidden md:inline">Book a Demo</span>
+              <span className="md:hidden inline-block  leading-tight">Book a<br />Demo</span>
             </button>
           </a>
           
