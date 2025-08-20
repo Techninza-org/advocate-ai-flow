@@ -27,8 +27,8 @@ const Navbar = () => {
   };
 
   return (
-    <div className="sticky top-0 z-50 bg-black">
-      <nav className="flex items-center px-4 sm:px-6 lg:px-8 py-3 sm:py-4 justify-between max-w-7xl mx-auto w-full">
+    <div className="sticky top-0 z-99 bg-black">
+      <nav className="flex items-center px-4 sm:px-6 lg:px-8 py-3 sm:py-4 justify-between mx-auto w-full">
         {/* Left side - Logo */}
         <a href="/">
           <div className="flex items-center">

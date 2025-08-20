@@ -148,8 +148,8 @@ export default function Page() {
           <span className="text-6xl md:text-7xl font-extrabold leading-none">
             2x
           </span>
-          <p className="ml-24 text-lg md:text-2xl font-medium text-right">
-            lawyer productivity <br /> without replacing jobs
+          <p className="ml-24 text-sm md:text-2xl font-medium text-right">
+            Lawyer productivity <br /> without replacing jobs
           </p>
         </div>
 
@@ -158,7 +158,7 @@ export default function Page() {
           <img
             src="/JUSTIS2.png"
             alt="Lady Justice statue"
-            className="rounded-3xl shadow-lg w-full h-full object-cover"
+            className="rounded-3xl shadow-lg w-full h-full"
           />
         </div>
 
@@ -201,7 +201,7 @@ export default function Page() {
           <img
             src="/JUSTICS.png"
             alt="Blindfolded person holding scales"
-            className="rounded-3xl shadow-lg w-full h-full object-cover"
+            className="rounded-3xl shadow-lg w-full h-full"
           />
         </div>
       </div>

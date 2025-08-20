@@ -8,7 +8,7 @@ const LegoraHeroSection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Join Us Button */}
         <div className="mb-4">
-          <button className="bg-white text-gray-700 px-6 py-3 rounded-full border border-gray-200 hover:border-gray-300 transition-all duration-300 shadow-sm hover:shadow-md">
+          <button className="bg-black text-white px-6 py-3 rounded-full border border-gray-200 hover:border-gray-300 transition-all duration-300 shadow-sm hover:shadow-md">
             Join Us
           </button>
         </div>

@@ -149,7 +149,7 @@ const CorePrinciples = () => {
   const TOTAL_FOLDED_SPACE = (CARD_COUNT - 1) * FOLDED_WIDTH;
 
   return (
-    <div className="font-sans bg-gray-100 py-12 sm:py-16 md:py-20 overflow-hidden mx-0 md:mx-0 my-16 md:my-0">
+    <div className="font-sans bg-gray-100 py-12 sm:py-16 md:py-20">
       {/* Global styles for custom animation easing */}
       <style jsx global>{`
         .ease-fluid {
